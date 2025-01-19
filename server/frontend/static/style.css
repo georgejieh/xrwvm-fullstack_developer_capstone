@@ -1,11 +1,15 @@
+/* ============================ */
 /* General Reset */
+/* ============================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
+  /* ============================ */
   /* Global Styles */
+  /* ============================ */
   body {
     font-family: 'Arial', sans-serif;
     color: #333;
@@ -27,7 +31,9 @@
     font-weight: bold;
   }
   
+  /* ============================ */
   /* Navbar */
+  /* ============================ */
   .navbar {
     background-color: #17a2b8;
     padding: 1rem;
@@ -49,7 +55,9 @@
     color: #d4d4d4 !important;
   }
   
+  /* ============================ */
   /* Card Styles */
+  /* ============================ */
   .card {
     background: #fff;
     border: 1px solid #e0e0e0;
@@ -72,6 +80,12 @@
     object-fit: cover;
   }
   
+  .card-body {
+    padding: 1rem;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
   .title {
     font-size: 1.2rem;
     font-weight: bold;
@@ -81,13 +95,9 @@
     border-radius: 4px;
   }
   
-  .card-body {
-    padding: 1rem;
-    font-size: 0.95rem;
-    color: #555;
-  }
-  
+  /* ============================ */
   /* Flex Containers */
+  /* ============================ */
   .row {
     display: flex;
     justify-content: space-between;
@@ -101,19 +111,92 @@
     padding: 0 2rem;
   }
   
+  /* ============================ */
   /* Banner Section */
+  /* ============================ */
   .banner {
-    background-color: #007bff;
-    color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
     text-align: center;
     margin: 1rem auto;
-    width: 80%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 90%;
   }
   
+  .banner-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* ============================ */
+  /* Hero Section */
+  /* ============================ */
+  .hero-section {
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  /* ============================ */
+  /* Contact Page Specific Styles */
+  /* ============================ */
+  
+  /* Contact Page Layout */
+  .contact-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+  }
+  
+  /* Contact Section */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .contact-details {
+    margin: 1rem 0;
+    padding: 1rem;
+    max-width: 800px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  .contact-details a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .contact-details a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  /* Contact Icon */
+  .contact-icon-wrapper {
+    margin: 2rem 0;
+  }
+  
+  .contact-icon {
+    width: 100px;
+    height: 100px;
+  }
+  
+  /* ============================ */
   /* Form Panel */
+  /* ============================ */
   .form_panel {
     padding: 2rem;
     background-color: #fff;
@@ -124,7 +207,9 @@
     max-width: 600px;
   }
   
+  /* ============================ */
   /* Buttons */
+  /* ============================ */
   button {
     background-color: #17a2b8;
     color: #fff;
@@ -140,7 +225,9 @@
     background-color: #138496;
   }
   
+  /* ============================ */
   /* Media Queries */
+  /* ============================ */
   @media (max-width: 768px) {
     .row {
       flex-direction: column;
@@ -157,6 +244,10 @@
   
     .nav-link {
       font-size: 0.9rem;
+    }
+  
+    .banner-image {
+      height: auto;
     }
   }
   
