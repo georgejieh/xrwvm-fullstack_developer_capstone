@@ -55,33 +55,42 @@ app.get('/fetchReviews/dealer/:id', async (req, res) => {
 // Express route to fetch all dealerships
 app.get('/fetchDealers', async (req, res) => {
   try {
-    const documents = await Dealerships.find();
-    res.json(documents);
+    const documents = await Dealerships.find(); // Retrieve all dealerships
+    res.json(documents); // Return all dealerships
   } catch (error) {
+    console.error('Error fetching dealerships:', error);
     res.status(500).json({ error: 'Error fetching dealerships' });
   }
 });
 
-// Express route to fetch dealerships by a particular state
+// Express route to fetch dealerships by state
 app.get('/fetchDealers/:state', async (req, res) => {
   try {
-    const documents = await Dealerships.find({ state: req.params.state });
-    res.json(documents);
+    const state = req.params.state; // Get the state from the URL
+    const documents = await Dealerships.find({ state: state }); // Filter dealerships by state
+    if (documents.length > 0) {
+      res.json(documents); // Return dealerships for the state
+    } else {
+      res.status(404).json({ error: `No dealerships found in state: ${state}` });
+    }
   } catch (error) {
+    console.error('Error fetching dealerships by state:', error);
     res.status(500).json({ error: 'Error fetching dealerships by state' });
   }
 });
 
-// Express route to fetch a dealer by a particular id
+// Express route to fetch a dealer by ID
 app.get('/fetchDealer/:id', async (req, res) => {
   try {
-    const document = await Dealerships.findOne({ id: req.params.id });
+    const id = req.params.id; // Get the dealer ID from the URL
+    const document = await Dealerships.findOne({ id: id }); // Find dealership by ID
     if (document) {
-      res.json(document);
+      res.json(document); // Return the dealership
     } else {
-      res.status(404).json({ error: 'Dealer not found' });
+      res.status(404).json({ error: `Dealer with ID ${id} not found` });
     }
   } catch (error) {
+    console.error('Error fetching dealer by ID:', error);
     res.status(500).json({ error: 'Error fetching dealer by ID' });
   }
 });
