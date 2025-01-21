@@ -14,11 +14,20 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='carmodel',
             name='dealer_id',
-            field=models.IntegerField(blank=True, default=0, null=True),
+            field=models.IntegerField(
+                blank=True, 
+                default=0, 
+                null=True
+            ),
         ),
         migrations.AlterField(
             model_name='carmodel',
             name='year',
-            field=models.IntegerField(validators=[django.core.validators.MaxValueValidator(2023), django.core.validators.MinValueValidator(2015)]),
+            field=models.IntegerField(
+                validators=[
+                    django.core.validators.MaxValueValidator(2023),
+                    django.core.validators.MinValueValidator(2015)
+                ]
+            ),
         ),
     ]
