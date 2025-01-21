@@ -8,7 +8,8 @@ class CarMake(models.Model):
     description = models.TextField()  # Description of the car make
 
     def __str__(self):
-        return self.name  # Return the name of the car make as a string representation
+        # Return the name of the car make as a string representation
+        return self.name
 
 
 # CarModel model
@@ -36,9 +37,12 @@ class CarModel(models.Model):
     year = models.IntegerField(  # Store the year as an integer
         validators=[
             MaxValueValidator(2023),
-            MinValueValidator(2015)
+            MinValueValidator(2015),
         ]
     )
 
     def __str__(self):
-        return f"{self.car_make.name} {self.name} ({self.year})"
+        # Return a formatted string representation of the car model
+        return (
+            f"{self.car_make.name} {self.name} ({self.year})"
+        )
