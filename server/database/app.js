@@ -1,4 +1,4 @@
-/* jshint esversion: 6 */ // Enable ES6 compatibility for JSHint
+/* jshint esversion: 8 */ // Enable ES8 compatibility for JSHint
 
 const express = require('express');
 const mongoose = require('mongoose');
