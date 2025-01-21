@@ -15,8 +15,8 @@ class Migration(migrations.Migration):
             model_name='carmodel',
             name='dealer_id',
             field=models.IntegerField(
-                blank=True, 
-                default=0, 
+                blank=True,
+                default=0,
                 null=True
             ),
         ),
